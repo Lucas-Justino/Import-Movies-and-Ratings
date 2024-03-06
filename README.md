@@ -1,45 +1,50 @@
-### Desafio para vaga de BackEnd - Foco em Ruby On Rails:
+# Instruções de Instalação e Uso
 
-Objetivo do Desafio:
+Após clonar o repositório do projeto, navegue até a pasta criada usando o comando `cd`.
 
-O objetivo deste desafio é avaliar suas habilidades no desenvolvimento com o framework Ruby On Rails, bem como quaisquer integrações necessárias, a implementação de funcionalidades que executam em segundo plano de forma síncrona, a escrita de testes e a criação de uma documentação clara.
+## Corrigindo a Versão do Ruby
 
-#### Requisitos:
+Ao executar `bundle install`, você pode encontrar o seguinte erro:
 
-- ruby-3.1.4
-- sqlite3
+```
+Your Ruby version is 3.2.3, but your Gemfile specified 3.1.4
+```
 
-Clone o projeto e ao executar:
+Para corrigir isso, abra o arquivo `Gemfile` localizado em `fuzzy-octo-chainsaw/Gemfile` e modifique a versão do Ruby para `3.2.3`.
 
-```ruby
+## Instalando Dependências e Configurando o Banco de Dados
+
+Após a correção da versão do Ruby, você pode instalar as dependências do projeto e configurar o banco de dados executando os seguintes comandos:
+
+```
 bundle install
 rails db:migrate
 rails db:seed
 ```
-Será configurado uma aplicação rails contando com as seguintes funcionalidades:
-- Usuário padrão admin@rotten e senha admin
-- Página de login
-- Rota para criação de novos usuários
-- Rota para cadastrar novo filme
-- Rota para dar nota nos filmes
-- Exibir a média das notas de cada filme
 
+## Iniciando o Servidor
 
-#### Desafio:
+Após realizar essas etapas, você pode iniciar o servidor executando o comando:
 
-- Criar uma rota para importar em massa vários filmes
-  - Você pode criar essa rota para receber um arquivo csv ou um payload json, ou outra forma que ficar mais fácil de integrar
-- Criar uma rota para submeter notas em massa para vários filmes
-  - Você pode criar essa rota para receber um arquivo csv ou um payload json, ou outra forma que ficar mais fácil de integrar
-- As tarefas acima **devem ser executadas em segundo plano**
-  - Recomendamos usar o [Sidekiq](https://github.com/sidekiq/sidekiq) para gerenciar as tarefas em segundo plano, mas você pode escolher outra solução
+```
+rails server
+```
 
-#### Pontos Extras:
-- Criar testes para as rotas da API e models da aplicação
-  - Recomendamos usar o [Rspec](https://semaphoreci.com/community/tutorials/getting-started-with-rspec) para os testes, mas você pode escolher outra solução
+Ao iniciar o servidor, abra o localhost especificado, que provavelmente será na porta 3000, em seu navegador.
 
+## Realizando o Login
 
-#### Entrega:
+Ao acessar o servidor, você pode encontrar um erro na primeira tentativa, mas basta recarregar a página para ser redirecionado à página de login.
 
-No README.md descreva as instruções sobre como executar o projeto, configurar variáveis de ambiente e executar os testes.
-Ao finalizar, forneça um link para o repositório do GitHub contendo o código-fonte e a documentação, enviado para o email vagas{at}oxeanbits{dot}com
+Utilize as seguintes credenciais de login:
+
+- **Usuário**: admin@rotten
+- **Senha**: admin
+
+## Utilizando as Funcionalidades
+
+Após o login bem-sucedido, você será direcionado para uma página com três links:
+
+- **Adicionar Filme**: Permite adicionar um novo filme ao sistema.
+- **Importar Filmes**: Permite importar filmes a partir de um arquivo CSV. O arquivo `movies.csv` na pasta do projeto pode ser utilizado para essa importação.
+- **Importar Notas**: Permite importar notas para os filmes a partir de um arquivo CSV. O arquivo `ratings.csv` na pasta do projeto pode ser utilizado para essa importação. Certifique-se de manter a mesma estrutura do arquivo para garantir a importação correta.
