@@ -10,7 +10,7 @@ Ao executar `bundle install`, você pode encontrar o seguinte erro:
 Your Ruby version is 3.2.3, but your Gemfile specified 3.1.4
 ```
 
-Para corrigir isso, abra o arquivo `Gemfile` localizado em `fuzzy-octo-chainsaw/Gemfile` e modifique a versão do Ruby para `3.2.3`.
+Para corrigir isso, abra o arquivo `Gemfile` localizado em `Import-Movies-and-Ratings/Gemfile` e modifique a versão do Ruby para `3.2.3`.
 
 ## Instalando Dependências e Configurando o Banco de Dados
 
