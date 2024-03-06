@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submeter Notas em Massa</title>
+</head>
+<body>
+  <h1>Submeter Notas em Massa</h1>
+  <%= form_tag(submit_ratings_path, multipart: true) do %>
+    <%= file_field_tag :file, id: 'fileInput' %>
+    <%= submit_tag 'Submeter' %>
+  <% end %>
+</body>
+</html>

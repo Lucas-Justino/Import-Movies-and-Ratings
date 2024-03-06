@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Importar Filmes</title>
+</head>
+<body>
+  <h1>Importar Filmes</h1>
+  <%= form_tag(import_movies_path, multipart: true) do %>
+    <%= file_field_tag :file, id: 'fileInput' %>
+    <%= submit_tag 'Importar' %>
+  <% end %>
+</body>
+</html>
